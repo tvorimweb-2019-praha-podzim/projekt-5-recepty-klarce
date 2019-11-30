@@ -1,42 +1,173 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
+html {
+  box-sizing: border-box;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
 
 
 /* -------------------------------------------------- */
 
 body {
-    margin: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+  margin     : 0;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 h2 {
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
+  margin     : 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 .paticka {
-    text-align: center;
-    font-size: 14px;
-    color: silver;
+  text-align: center;
+  font-size : 14px;
+  color     : silver;
 }
 
 .paticka a {
-    color: silver;
+  color: silver;
 }
 
 /* -------------------------------------------------- */
+.recept {
+  background-size    : auto, cover;
+  background-position: center;
+  color              : white;
+  position           : relative;
+  padding-bottom     : 66.6667%;
+  font-size          : 14px;
 
-/*
-pouzivame mobile first pristup
-tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni (telefony)
-s pribyvajici sirkou pridavame media query pro...
-tablety:
+}
+
+
+.recept-kategorie {
+  float   : left;
+  position: absolute;
+  top     : 0;
+  left    : 0;
+  padding : 10px;
+
+}
+
+.recept-komentare {
+  float   : right;
+  position: absolute;
+  top     : 0;
+  right   : 0;
+  padding : 10px;
+
+}
+
+.recept-nazev {
+  position   : absolute;
+  bottom     : 0;
+  left       : 0;
+  padding    : 10px;
+  font-family: raleway, sans-serif;
+  font-size  : 18px;
+
+}
+
+.hlavni-recept {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/burger.jpg");
+  min-height      : 200px;
+
+}
+
+.hlavni-recept .recept-nazev {
+  font-size: 28px;
+}
+
+.recept2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/sushi.jpg")
+}
+
+.recept3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/rajcata.jpg");
+
+}
+
+.recept4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/kure.jpg");
+
+}
+
+.recept5 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/grilovani.jpg");
+
+}
+
+
 @media (min-width: 480px) {
-}
-notebook/pc:
-@media (min-width: 860px) {
-}
-*/
+  .doporucujeme {
+    display  : flex;
+    flex-wrap: wrap;
+  }
 
-/* tvoje styly sem */
+  .hlavni-recept {
+    width       : 100%;
+    border      : 1px solid #ffffff;
+    margin      : -1px 0;
+    border-left : 0;
+    border-right: 0;
+  }
+
+  .sloupec {
+    width: 50%;
+  }
+
+  .recept {
+    border: 1px solid #ffffff;
+    margin: -1px;
+  }
+
+  .recept-nazev,
+  .recept-kategorie,
+  .recept-komentare {
+    padding: 20px;
+  }
+
+  .hlavni-recept .recept-nazev {
+    font-size: 36px;
+  }
+
+  .recept-nazev {
+    font-size: 22px;
+  }
+}
+
+/* notebook/pc: */
+@media (min-width: 860px) {
+  .doporucujeme {
+    flex-wrap: nowrap;
+  }
+
+  .recept {
+    height        : auto;
+    padding-bottom: 0;
+    min-height    : 200px;
+  }
+
+  .hlavni-recept {
+    min-height  : 398px;
+    margin      : -1px;
+    border-left : 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+  }
+
+  .hlavni-recept,.sloupec {
+    width: 33.33333%;
+  }
+
+  .hlavni-recept .recept-nazev {
+    font-size: 48px;
+  }
+
+  .recept-nazev {
+    font-size: 28px;
+  }
+}
